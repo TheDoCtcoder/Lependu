@@ -1,5 +1,8 @@
 // String.fromCharCode(97); = a to 122 = z
 // console.log(String.fromCharCode(97));
+let dico = ['wagon', 'cygne', 'flibustier', 'palisandre', 'caiman','quartz','walabi','ballast','ukulele','zozoter','gospel','guenon','puzzle','seisme'];
+
+
 var nessai=8;
 var msg="";
 var msggp= "Il vous reste " + nessai + " Vie(s) ";
@@ -12,8 +15,10 @@ for (i=1; i<=26; i++) {
 }
 var lnjouee = alpha;
 document.getElementById("r1").innerHTML = alpha.join(" ");
-var mot=String.fromCharCode(119,97,103,111,110); //mot de passe avec code ascii pour ne  pas le trouver facilement dans le code
+//var mot=String.fromCharCode(119,97,103,111,110); //mot de passe avec code ascii pour ne  pas le trouver facilement dans le code
 // var mot="cerise";
+var rand = Math.floor(Math.random()*dico.length);
+var mot= dico[rand];
 var matrouver =mot.split();
 for (i=0; i<(mot.length); i++) {
     matrouver[i]="_";
@@ -34,15 +39,9 @@ function pendu()  {
 }
     
     temps = 61;
-    var trouve=false;
-    var lentree = document.getElementById("el").value;   
+    var trouve=false;  
+    var lentree = document.getElementById("el").value.toLowerCase();   
     
-    
-    //
-
-
-
-//
 
     lnjouee.forEach((element, index, object) => {
         if (element == lentree) {
@@ -71,7 +70,7 @@ function pendu()  {
 
 
     if (nessai == 0) {
-        msggp ="<<< Vous êtes MORT !!! Appuyez sur F5 pour rejouer >>>";
+        msggp ="<<< Vous êtes MORT !!! Appuyez sur F5 pour rejouer >>>"+msgp;
         clearInterval(moninterval); //supprime l'intervale
         document.getElementById("timer").innerHTML = "";
 
