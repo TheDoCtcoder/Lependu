@@ -113,6 +113,7 @@ function timers() {
     else  if (temps ==0){
         
         document.getElementById("vie").innerHTML = "<<< Vous êtes MORT !!! Appuyez sur F5 pour rejouer >>>"+ msgp;
+        document.getElementById("image").innerHTML = "<img src='pendu"+(8)+".png'</img>";
         clearInterval(moninterval);
         document.getElementById("timer").innerHTML = "";
         document.getElementById("eb").button.disable= true;

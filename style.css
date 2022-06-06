@@ -31,6 +31,18 @@ h1 {
 
 input#el {
     height: 30px;
+    background-color:  rgb(234, 139, 30);
+    outline-style: dashed;
+    outline-color: aliceblue;
+    border: none;
+    width: 200px;
+    margin-right: 15px;
+    font-size: 1.5rem;
+    font-family: 'Bebas Neue', cursive;
+    color:white;
+}
+input#el:focus {
+    outline: none;
 }
 
 p#mot {
@@ -38,7 +50,10 @@ p#mot {
 }
 
 button#eb {
-
+border-radius: 5px;
+padding: 5px;
+background-color:green;
+color: rgb(224, 239, 224);
 }
 
 p#r1 {
