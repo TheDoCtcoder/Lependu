@@ -21,7 +21,8 @@ var rand = Math.floor(Math.random()*dico.length);
 var mot= dico[rand];
 var matrouver =mot.split();
 for (i=0; i<(mot.length); i++) {
-    matrouver[i]="_";
+    // matrouver[i]="_";
+    matrouver[i]="<span class='verte'>_</span>";
 }
 
 document.getElementById("vie").innerHTML = "Il vous reste " + nessai + " Vie(s) ";
@@ -72,9 +73,20 @@ function pendu()  {
     if (nessai == 0) {
         msggp ="<<< Vous êtes MORT !!! Appuyez sur F5 pour rejouer >>>"+msgp;
         clearInterval(moninterval); //supprime l'intervale
+        for (i=0; i<=(mot.length-1); i++) {
+            if (matrouver[i] != mot[i]) {
+                matrouver[i] ="<span class='rouge'>"+mot[i]+"</span>";
+            }
+                else{
+                matrouver[i] ="<span class='verte'>"+mot[i]+"</span>";
+                }
+                matrouver[mot.length]="<span class='blanc'> était le mot à trouver !!!</span>"
+                document.getElementById("mot").innerHTML = matrouver.join();
+            }
+            
+        }
         document.getElementById("timer").innerHTML = "";
 
-    }
 
     if (matrouver.join("") == mot) {
         msggp=("BRAVO, vous avez trouvé Appuyez sur F5 pour rejouer !!!") +msgg;
@@ -92,7 +104,7 @@ function pendu()  {
 
 }
 
-let temps = 60;
+ let temps = 60;
 
 const timerElement = document.getElementById("timer");
 
@@ -112,8 +124,20 @@ function timers() {
     else  if (temps ==0){
         
         document.getElementById("vie").innerHTML = "<<< Vous êtes MORT !!! Appuyez sur F5 pour rejouer >>>"+ msgp;
+        for (i=0; i<=(mot.length-1); i++) {
+            if (matrouver[i] != mot[i]) {
+                matrouver[i] ="<span class='rouge'>"+mot[i]+"</span>";
+            }
+                else{
+                matrouver[i] ="<span class='verte'>"+mot[i]+"</span>";
+                }
+                matrouver[mot.length]="<span class='blanc'> était le mot à trouver !!!</span>";
+                document.getElementById("mot").innerHTML =""; 
+                document.getElementById("mot").innerHTML = matrouver.join(' ');
+            }
         document.getElementById("image").innerHTML = "<img src='pendu"+(8)+".png'</img>";
         clearInterval(moninterval);
+       
         document.getElementById("timer").innerHTML = "";
         document.getElementById("eb").button.disable= true;
         
