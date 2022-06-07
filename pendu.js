@@ -71,7 +71,7 @@ function pendu()  {
 
 
     if (nessai == 0) {
-        msggp ="<<< Vous êtes MORT !!! Appuyez sur F5 pour rejouer >>>"+msgp;
+        msggp ="<<< Vous êtes MORT !!! Appuyez sur <span class='blanc'>'F5'</span> pour rejouer >>>"+msgp;
         clearInterval(moninterval); //supprime l'intervale
         for (i=0; i<=(mot.length-1); i++) {
             if (matrouver[i] != mot[i]) {
@@ -119,11 +119,11 @@ function timers() {
     nessai = (nessai -1);
     document.getElementById("vie").innerHTML = "Il vous reste " + nessai + " Vie(s) " +msgp;
     document.getElementById("image").innerHTML = "<img src='pendu"+((8-nessai))+".png'</img>";
-    temps = 61;
+     temps = 61;
             }
     else  if (temps ==0){
         
-        document.getElementById("vie").innerHTML = "<<< Vous êtes MORT !!! Appuyez sur F5 pour rejouer >>>"+ msgp;
+        document.getElementById("vie").innerHTML = "<<< Vous êtes MORT !!! Appuyez sur <span class='blanc'>'F5'</span> pour rejouer >>>"+ msgp;
         for (i=0; i<=(mot.length-1); i++) {
             if (matrouver[i] != mot[i]) {
                 matrouver[i] ="<span class='rouge'>"+mot[i]+"</span>";
